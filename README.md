@@ -12,6 +12,25 @@ I have used this code in my iPhone apps and recently revised it to make it easie
 
 Code
 ----
+
+    - (void)viewDidLoad
+    {
+        [super viewDidLoad];
+
+        UIView *blueView = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
+        blueView.backgroundColor = [UIColor blueColor];
+        [self.view addSubview:blueView];
+        [self addMovementGesturesToView:blueView];
+        
+        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+        panGesture.delegate = self;
+        [blueView addGestureRecognizer:panGesture];
+        
+        UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
+        pinchGesture.delegate = self;
+        [blueView addGestureRecognizer:pinchGesture];
+    }
+
     - (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
         CGPoint translation = [panGesture translationInView:panGesture.view.superview];
         
