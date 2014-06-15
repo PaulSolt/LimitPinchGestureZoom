@@ -25,3 +25,5 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+GestureZoomAndPan/GestureZoomAndPan.xcodeproj/project.xcworkspace/xcuserdata/paul.xcuserdatad/UserInterfaceState.xcuserstate
