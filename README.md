@@ -13,6 +13,9 @@ I have used this code in my iPhone apps and recently revised it to make it easie
 Code
 ----
 
+Create a view, if you use UILabel or UIImageView, you must set userInteractionEnabled = YES
+
+
     - (void)viewDidLoad
     {
         [super viewDidLoad];
@@ -31,6 +34,9 @@ Code
         [blueView addGestureRecognizer:pinchGesture];
     }
 
+
+Implement methods to respond to gesture messages. Pan gesture can use relative motion by reseting the translation back to (0,0).
+
     - (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
         CGPoint translation = [panGesture translationInView:panGesture.view.superview];
         
@@ -42,6 +48,11 @@ Code
         }
         // Don't need any logic for ended/failed/canceled states
     }
+
+
+The Pinch gesture is a little more complex. This sample code shows how to apply a scale factor. If you want to change font sizes, you'll need to use different code. (Creating too many UIFont objects can slow down responsiveness)
+
+
 
     - (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGesture {
         
@@ -79,6 +90,9 @@ Code
             pinchGesture.scale = 1;
         }
     }
+
+
+Conform to the UIGestureRecognizerDelegate Protocol and make sure to set the delegate for each gesture you create. This method can have more complex logic, but I find that YES is enough for general photo collage type apps.
 
     - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
         return YES; // Works for most use cases of pinch + zoom + pan
