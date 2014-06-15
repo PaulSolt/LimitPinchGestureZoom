@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8E44F3A2-C5C5-4D51-B611-275867A6BA11</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GestureZoomAndPan</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>A7D2D241-09ED-43DF-BDAF-52C0702C0347</key>
+		<string>https://github.com/PaulSolt/LimitPinchGestureZoom.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GestureZoomAndPan/GestureZoomAndPan.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>A7D2D241-09ED-43DF-BDAF-52C0702C0347</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/PaulSolt/LimitPinchGestureZoom.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>A7D2D241-09ED-43DF-BDAF-52C0702C0347</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A7D2D241-09ED-43DF-BDAF-52C0702C0347</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LimitPinchGestureZoom</string>
+		</dict>
+	</array>
+</dict>
+</plist>
