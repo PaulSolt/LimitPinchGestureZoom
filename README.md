@@ -74,13 +74,10 @@ The Pinch gesture is a little more complex. This sample code shows how to apply 
             
             float deltaScale = pinchGesture.scale;
             
-            // We need to translate the zoom to a value that we can multiple
-            //  a speed factor and then translate back to "zoomSpace"
-            if(pinchGesture.scale > 1) {
-                deltaScale = (deltaScale - 1) * zoomSpeed + 1;
-            } else if(pinchGesture.scale < 1) {
-                deltaScale = 1 - ((1 - deltaScale) * zoomSpeed);
-            }
+	        // You need to translate the zoom to 0 (origin) so that you
+	        // can multiply a speed factor and then translate back to "zoomSpace" around 1
+	        deltaScale = ((deltaScale - 1) * zoomSpeed) + 1;
+	
             // Limit to min/max size (i.e maxScale = 2, current scale = 2, 2/2 = 1.0)
             //  A deltaScale is ~0.99 for decreasing or ~1.01 for increasing
             //  A deltaScale of 1.0 will maintain the zoom size
