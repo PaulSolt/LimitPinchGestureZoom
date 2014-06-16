@@ -76,7 +76,7 @@
         // Variables to adjust the max/min values of zoom
         float minScale = 1.0;
         float maxScale = 2.0;
-        float zoomSpeed = .2;
+        float zoomSpeed = .5;
         
         float deltaScale = pinchGesture.scale;
         
