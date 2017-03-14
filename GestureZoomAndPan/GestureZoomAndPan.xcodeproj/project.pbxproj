@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CEDD5161E780A72002E4396 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDD5151E780A72002E4396 /* SwiftViewController.swift */; };
 		DA4CF93D194D1D0300E2C81F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4CF93C194D1D0300E2C81F /* Foundation.framework */; };
 		DA4CF93F194D1D0300E2C81F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4CF93E194D1D0300E2C81F /* CoreGraphics.framework */; };
 		DA4CF941194D1D0300E2C81F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4CF940194D1D0300E2C81F /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CEDD5141E780A72002E4396 /* GestureZoomAndPan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GestureZoomAndPan-Bridging-Header.h"; sourceTree = "<group>"; };
+		9CEDD5151E780A72002E4396 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		DA4CF939194D1D0300E2C81F /* GestureZoomAndPan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureZoomAndPan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4CF93C194D1D0300E2C81F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA4CF93E194D1D0300E2C81F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 				DA4CF971194D26E400E2C81F /* BombDodge@2x.png */,
 				DA4CF954194D1D0300E2C81F /* Images.xcassets */,
 				DA4CF943194D1D0300E2C81F /* Supporting Files */,
+				9CEDD5151E780A72002E4396 /* SwiftViewController.swift */,
+				9CEDD5141E780A72002E4396 /* GestureZoomAndPan-Bridging-Header.h */,
 			);
 			path = GestureStackOverflow;
 			sourceTree = "<group>";
@@ -202,6 +207,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Paul Solt";
 				TargetAttributes = {
+					DA4CF938194D1D0300E2C81F = {
+						LastSwiftMigration = 0820;
+					};
 					DA4CF959194D1D0300E2C81F = {
 						TestTargetID = DA4CF938194D1D0300E2C81F;
 					};
@@ -253,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEDD5161E780A72002E4396 /* SwiftViewController.swift in Sources */,
 				DA4CF953194D1D0300E2C81F /* ViewController.m in Sources */,
 				DA4CF94D194D1D0300E2C81F /* AppDelegate.m in Sources */,
 				DA4CF949194D1D0300E2C81F /* main.m in Sources */,
@@ -380,10 +389,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GestureStackOverflow/GestureZoomAndPan-Prefix.pch";
 				INFOPLIST_FILE = "GestureStackOverflow/GestureZoomAndPan-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = GestureZoomAndPan;
+				SWIFT_OBJC_BRIDGING_HEADER = "GestureStackOverflow/GestureZoomAndPan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,10 +407,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GestureStackOverflow/GestureZoomAndPan-Prefix.pch";
 				INFOPLIST_FILE = "GestureStackOverflow/GestureZoomAndPan-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = GestureZoomAndPan;
+				SWIFT_OBJC_BRIDGING_HEADER = "GestureStackOverflow/GestureZoomAndPan-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -404,6 +422,7 @@
 		DA4CF96F194D1D0300E2C81F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GestureStackOverflow.app/GestureStackOverflow";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -426,6 +445,7 @@
 		DA4CF970194D1D0300E2C81F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GestureStackOverflow.app/GestureStackOverflow";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
