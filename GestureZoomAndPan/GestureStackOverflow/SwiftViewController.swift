@@ -43,6 +43,10 @@ class SwiftViewController: UIViewController, UIGestureRecognizerDelegate {
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(pinchGesture:)))
         pinchGesture.delegate = self
         view.addGestureRecognizer(pinchGesture)
+        
+        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotateGesture(rotateGesture:)))
+        rotateGesture.delegate = self
+        view.addGestureRecognizer(rotateGesture)
     }
     
     func handlePanGesture (panGesture: UIPanGestureRecognizer) {
@@ -69,6 +73,13 @@ class SwiftViewController: UIViewController, UIGestureRecognizerDelegate {
             let zoomTransform = (pinchGesture.view?.transform)!.scaledBy(x: deltaScale, y: deltaScale)
             pinchGesture.view?.transform = zoomTransform
             pinchGesture.scale = 1
+        }
+    }
+    
+    open func handleRotateGesture (rotateGesture: UIRotationGestureRecognizer) {
+        if rotateGesture.state == .began || rotateGesture.state == .changed {
+            rotateGesture.view?.transform = (rotateGesture.view?.transform)!.rotated(by: rotateGesture.rotation)
+            rotateGesture.rotation = 0
         }
     }
     
