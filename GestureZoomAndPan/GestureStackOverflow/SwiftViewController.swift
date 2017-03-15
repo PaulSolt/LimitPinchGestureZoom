@@ -39,13 +39,16 @@ class SwiftViewController: UIViewController, UIGestureRecognizerDelegate {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(panGesture:)))
         panGesture.delegate = self
         view.addGestureRecognizer(panGesture)
-        
+      panGesture.cancelsTouchesInView = false
+      
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(pinchGesture:)))
         pinchGesture.delegate = self
         view.addGestureRecognizer(pinchGesture)
+      pinchGesture.cancelsTouchesInView = false
         
         let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotateGesture(rotateGesture:)))
         rotateGesture.delegate = self
+      rotateGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(rotateGesture)
     }
     
@@ -86,4 +89,5 @@ class SwiftViewController: UIViewController, UIGestureRecognizerDelegate {
     open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+  
 }
