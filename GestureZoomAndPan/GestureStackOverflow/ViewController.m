@@ -46,11 +46,20 @@
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     panGesture.delegate = self;
+    panGesture.cancelsTouchesInView = NO;
     [view addGestureRecognizer:panGesture];
     
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
     pinchGesture.delegate = self;
+    pinchGesture.cancelsTouchesInView = NO;
     [view addGestureRecognizer:pinchGesture];
+  
+  
+    UIRotationGestureRecognizer *rotateGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotateGesture:)];
+    rotateGesture.delegate = self;
+    rotateGesture.cancelsTouchesInView = NO;
+    [view addGestureRecognizer:rotateGesture];
+
 }
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
@@ -96,6 +105,14 @@
         // Reset to 1 for scale delta's
         //  Note: not 0, or we won't see a size: 0 * width = 0
         pinchGesture.scale = 1;
+    }
+}
+
+- (void)handleRotateGesture:(UIRotationGestureRecognizer *)rotateGesture {
+    if (UIGestureRecognizerStateBegan == rotateGesture.state ||
+        UIGestureRecognizerStateChanged == rotateGesture.state) {
+        rotateGesture.view.transform = CGAffineTransformRotate(rotateGesture.view.transform, rotateGesture.rotation);
+        rotateGesture.rotation = 0;
     }
 }
 
